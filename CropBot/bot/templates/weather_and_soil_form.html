@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather and Soil Quality</title>
+</head>
+<body>
+    <h1>Weather and Soil Quality Information</h1>
+    <form action="{% url 'whatsapp' %}" method="post">
+        {% csrf_token %}
+        <label for="location">Enter Your Location (Latitude, Longitude):</label><br>
+        <input type="text" id="location" name="location" required><br><br>
+
+        <label for="soil_params">Enter Soil Quality Parameters:</label><br>
+        <textarea id="soil_params" name="soil_params" rows="5" cols="50" required></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
